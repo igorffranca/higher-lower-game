@@ -19,20 +19,21 @@ flag = True
 
 compareB = random.choice(data)
 
+
 while flag:
    clear()
    print(logo)
 
    compareA = compareB
    compareB = random.choice(data)
+   if compareA == compareB:
+      compareB = random.choice(data)
 
    if score > 0:
       print(f"You're right! Current score: {score}")
 
-   print()
-   print(f"Compare A: {compareA['name']}, a {compareA['description']}, from {compareA['country']}\n")
+   print(f"\nCompare A: {compareA['name']}, a {compareA['description']}, from {compareA['country']}\n")
    print(vs)
-
    print(f"\nAgainst B: {compareB['name']}, a {compareB['description']}, from {compareB['country']}\n")
 
    answer = input("Who has more followers? Type 'A' or 'B': ")
@@ -53,7 +54,6 @@ while flag:
 
       if followersB > followersA:
          score += 1
-         continue
       else:
          print_else(clear(),logo, score)
          flag = False
