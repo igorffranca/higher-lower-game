@@ -16,9 +16,7 @@ def print_else(clear_function, logo, score):
          
 score = 0
 flag = True
-
 compareB = random.choice(data)
-
 
 while flag:
    clear()
@@ -42,7 +40,6 @@ while flag:
    followersB = compareB['follower_count']
 
    if answer == "A":
-
       if followersA > followersB:
          score += 1
          continue
@@ -51,7 +48,6 @@ while flag:
          flag = False
 
    else:
-
       if followersB > followersA:
          score += 1
       else:
